@@ -1,1 +1,1 @@
-node --experimental-modules ./lint.mjs discord-fetch.js
+node --experimental-modules ./lint.mjs discord-fetch.js discord-widget.js
