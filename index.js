@@ -1,25 +1,20 @@
 /*jslint
-    browser
-*/
-
-/*global
-    console
+    browser, devel
 */
 
 import parseq from "./parseq.js";
 
-function widgetRequestor(callback, success) {
-    "use strict";
+function widgetRequestor(callback) {
     const invitationRequest = new XMLHttpRequest();
     invitationRequest.addEventListener("load", function successHandler(event) {
         const discordInformation = JSON.parse(event.target.responseText);
-        callback(discordInformation); 
+        callback(discordInformation);
     });
     invitationRequest.open("GET", "https://discordapp.com/api/guilds/430758941530783754/widget.json");
     invitationRequest.send();
 }
 
-function log(value, reason) {
+function log(value) {
     console.log(value);
 }
 

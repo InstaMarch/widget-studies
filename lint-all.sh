@@ -1,1 +1,5 @@
-node --experimental-modules ./lint.mjs discord-fetch.js discord-widget.js index.js
+node --experimental-modules ./lint.mjs \
+discord-fetch.js \
+discord-widget.js \
+xml-http-request.js \
+index.js
