@@ -4,7 +4,7 @@
 
 import parseq from "./parseq.js";
 
-function widgetRequestor(callback) {
+function widgetRequestor(callback, value) {
     const invitationRequest = new XMLHttpRequest();
     invitationRequest.addEventListener("load", function successHandler(event) {
         const discordInformation = JSON.parse(event.target.responseText);
@@ -14,8 +14,13 @@ function widgetRequestor(callback) {
     invitationRequest.send();
 }
 
-function log(value) {
-    console.log(value);
+function log(value, reason) {
+    if (value) {
+        console.log(value);
+    }
+    if (reason) {
+        console.log(reason);
+    }
 }
 
 parseq.sequence([widgetRequestor])(log);
